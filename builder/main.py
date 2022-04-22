@@ -381,7 +381,7 @@ elif upload_protocol in debug_tools:
         # normal firmware upload. flash starts at 0x10000000
         openocd_args.extend([
             "-c", "program {$SOURCE} %s verify reset; shutdown;" %
-            board.get("upload.offset_address", "0x10000000")
+            board.get("upload.offset_address", "")
         ])
     openocd_args = [
         f.replace("$PACKAGE_DIR", platform.get_package_dir(
